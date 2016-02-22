@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: lightgrey;
+  display:block;
+  width: 100%;
+}
+
+
+.title{
+  background-color: lightgrey;
+  height:20%;
+  width:100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 2%;
+}
+
+.photoBox{
+  width:100%;
+  margin:0 auto;
+  display:inline-block;
+}
+li{
+  list-style-type: none;
+}
+ul{
+  margin: 0 auto;
+  width:28%;
+  display: inline-block;
+  padding-bottom: 5%;
+}
+img{
+  margin: 0 auto;
+  width:98%;
+  height:98%;
+  padding-bottom: 2%;
+  padding-right: 2%;
+  display:inline-block;
+}
+
+h3{
+  margin:0 auto;
+  text-align: center;
+}
+
+/*.top-three li, .bottom-three li{
+  display: inline-block;
+  width:100%;
+}*/
+
+
+
+/*.photo-album span{
+    display: inline-block;
+
+
+}*/
