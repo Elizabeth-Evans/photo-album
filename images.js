@@ -2,7 +2,7 @@ var albums=[
   { type: "album",
   albumTitle: "Asheville",
   albumCover:"images/asheville10.jpg",
-    asheville: [
+    photos: [
       {photoName:"Asheville1",
       photoUrl:"images/asheville10.jpg",},
       {photoName:"Asheville2",
@@ -10,7 +10,7 @@ var albums=[
       {photoName:"Asheville3",
       photoUrl:"images/asheville9.jpg",},
       {photoName:"Asheville4",
-      photoName:"images/asheville4.jpg",},
+      photoUrl:"images/asheville4.jpg",},
       {photoName:"Asheville5",
       photoUrl:"images/asheville5.jpg",},
       {photoName:"Asheville6",
@@ -21,25 +21,25 @@ var albums=[
     { type: "album",
     albumTitle: "Costumes",
     albumCover:"images/costume1.jpg",
-    costumes: [
+    photos: [
       {photoName:"Costume1",
       photoUrl: "images/costume1.jpg",},
       {photoName:"Costume2",
       photoUrl: "images/costume5.jpg",},
       {photoName:"Costume3",
-      photoUrl:"images/costume1.jpg",},
+      photoUrl:"images/cosume2.jpg",},
       {photoName:"Costume4",
-      photoUrl:"images/costume1.jpg",},
+      photoUrl:"images/costume10.jpg",},
       {photoName:"Costume5",
-      photoUrl:"images/costume1.jpg",},
+      photoUrl:"images/costume8.jpg",},
       {photoName:"Costume6",
-      photoUrl:"images/costume1.jpg",},
+      photoUrl:"images/costume6.jpg",},
     ],
   },
     { type: "album",
     albumTitle: "Crafts",
     albumCover:"images/craft2.jpg",
-    crafts: [
+    photos: [
       {photoName:"Craft1",
       photoUrl:"images/craft2.jpg",},
       {photoName:"Craft2",
@@ -58,7 +58,7 @@ var albums=[
   { type: "album",
     albumTitle: "Dance",
     albumCover:"images/dance8.jpg",
-    dance: [
+    photos: [
       {photoName:"Dance1",
       photoUrl:"images/dance8.jpg",},
       {photoName:"Dance2",
@@ -76,7 +76,7 @@ var albums=[
   { type: "album",
     albumTitle: "Family",
     albumCover:"images/family1.jpg",
-    family: [
+    photos: [
       {photoName:"Family1",
       photoUrl:"images/family1.jpg",},
       {photoName:"Family2",
@@ -94,7 +94,7 @@ var albums=[
   {type: "album",
     albumTitle: "Music",
     albumCover:"images/music5.jpg",
-    music:[
+    photos:[
       {photoName:"Music1",
       photoUrl:"images/music5.jpg",},
       {photoName:"Music2",

@@ -1,40 +1,48 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-
-
-
-
-    <!DOCTYPE html>
+  <!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8">
-        <title>JQBlog</title>
+        <title>Photo Album</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
         <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="bower_components/octicons/octicons.css" media="screen" title="no title" charset="utf-8">
+
+        <script type="text/template" id="grabNavBar">
+          <div>
+            <a href='#'>
+              <h5><%= albumTitle %></h5>
+            </a>
+        </div>
+      </script>
+
+
+        <script type="text/template" id="grabLater">
+        <ul>
+          <li>
+            <a href='#'>
+              <img rel='<%= albumTitle %>' src='<%= albumCover %>'
+            </a>
+            <h3><%= albumTitle %></h3>
+          </li>
+        </ul>
+        </script>
+
+        <script type="text/template" id="grabLaterEr">
+        <ul>
+          <li>
+            <a href='#'>
+              <img rel= '<%= photoName %>' src= '<%= photoUrl %>' />
+            </a>
+            <h3><%= photoName %></h3>
+          </li>
+        </ul>
+        </script>
+
+
       </head>
       <body>
    <header>
-<!--  navigation bar -->
-     <!-- <ul class= "navigation">
-       <li><span class="octicon octicon-arrow-left"></span></li>
-       <li>
-         <span class="octicon octicon-arrow-right"></span>
-       </li>
-       <li><span class="octicon octicon-x"></span></li>
-       <li><span class="octicon octicon-home"></span></li>
 
-       <li>
-         <form class="">
-           <input type="text" name="title" placeholder="http://">
-         </form>
-       </li>
-       <li><span class="octicon octicon-search"></span></li> -->
 
      </ul>
    </header>
@@ -108,18 +116,21 @@
      <span class="octicon octicon-heart"></span>
    </div>
 
+   <div class="navBar">
+   </div>
 <!-- Main Content container -->
    <div class="container">
 
-<!-- ASIDE -->
-     <aside>
-     </aside>
+
 
 <!-- container of photos -->
-     <div class= "photoBox">
-      
 
-     </div>
+
+   </div>
+   <div class= "photoBox">
+     <!-- ASIDE -->
+          <aside class="sideBar">
+          </aside>
 
    </div>
 

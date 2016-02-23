@@ -1,138 +1,121 @@
 
 
 // main album
-
+// old version....
+//    var photoAlbums = "";
+//    albums.forEach(function(element, idx) {
+//      photoAlbums +=
+//      "<ul>"
+//      + "<li><a href='#'><img rel= '"+element.albumTitle+"' src= '"
+//      + element.albumCover + "' /></a>"
+//      + "<h3>"
+//      + element.albumTitle
+//      + "</h3></li></ul>";
+//    });
+//  $('.container').append(photoAlbums);
+//  });
+// new version...
 $(document).ready(function() {
   var photoAlbums = "";
+  var albumTmpl = _.template($('#grabLater').html())
   albums.forEach(function(element, idx) {
-    photoAlbums += "<ul>" + "<li><a href><img src= '" + element.albumCover +
-      "' /></a>" + "<h3>" + element.albumTitle + "</h3></li></ul>";
+    photoAlbums += albumTmpl(element);
   });
-$('.photoBox').append(photoAlbums);
+$('.container').append(photoAlbums);
+});
+
+// This is what puts images from specific album to the page
+
+$('.container').on('click', 'img', function(event){
+  event.preventDefault();
+   var selectedPage = $(this).attr('rel');
+   var albumToPutOnPage = albums.filter(function(element){
+     return selectedPage === element.albumTitle;
+   }).pop();
+  var albumHtmlStr="";
+  var picTmpl = _.template($('#grabLaterEr').html())
+   albumToPutOnPage.photos.forEach(function(element){
+     albumHtmlStr += picTmpl(element);
+   });
+   $('.photoBox').html(albumHtmlStr);
+   $('.container').hide();
+});
+
+// shows full images by it self
+
+  $('.photoBox').on('click', 'img', function(event) {
+    event.preventDefault();
+      var selectedImg = $(this).attr('src');
+      console.log(selectedImg);
+      $('.photoBox').html("<img src='"+selectedImg+"'/>");
+  });
+
+// navBar appears
+$('.container').on('click', 'img', function(event) {
+  event.preventDefault();
+  var albumNav="";
+  var albumTmpl= _.template($('#grabNavBar').html())
+
+  albums.forEach(function(element) {
+    albumNav += albumTmpl(element);
+  });
+$('.navBar').append(albumNav);
+});
+
+// clicking navBar
+$('.navBar').on('click', 'div', function(event){
+  event.preventDefault();
+   var selectedPage = $(this).attr('rel');
+   var albumToPutOnPage = albums.filter(function(element){
+     return selectedPage === element.albumTitle;
+   }).pop();
+  var albumHtmlStr="";
+  var picTmpl = _.template($('#grabLaterEr').html())
+   albumToPutOnPage.photos.forEach(function(element){
+     albumHtmlStr += picTmpl(element);
+   });
+   console.log(albumHtmlStr);
+   $('.photoBox').html(albumHtmlStr);
+   $('.container').hide();
 });
 
 
-//please work
-// $("images/asheville10.jpg").on("click", "img", function(event){
+
+// $('.navBar').on('click', 'img', function(event){
 //   event.preventDefault();
-//   var albumToPutOnPage = {photoName:"Asheville1",
-//   photoUrl:"images/asheville10.jpg",},
-//   {photoName:"Asheville2",
-//   photoUrl:"images/asheville2.jpg",},
-//   {photoName:"Asheville3",
-//   photoUrl:"images/asheville9.jpg",},
-//   {photoName:"Asheville4",
-//   photoName:"images/asheville4.jpg",},
-//   {photoName:"Asheville5",
-//   photoUrl:"images/asheville5.jpg",},
-//   {photoName:"Asheville6",
-//   photoUrl:"images/asheville8.jpg",}
+//   var albumNav="";
+//   var addNavBar= _.template($('#grabNavBar').html())
+//   albums.forEach(function(element) {
+//        albumNav += albumTmpl(element);
+//      });
+//    $('.navBar').append(albumNav);
+//    });
+
+// var addNavBar= _.template($('#grabNavBar').html())
+// $('.navBar').append(addNavBar);
 // });
-
-
-$('.albumCover').on('click', 'img', function(event){
- event.preventDefault();
- var selectedPage = $(this).attr('rel');
- var albumToPutOnPage = albums.asheville [''];
- console.log(selectedPage);
- console.log(albumToPutOnPage);
-});
-
-// another
-
-// $('.albumCover').on('click', 'li', function(event){
-//  event.preventDefault();
-//  var selectedPage = $(this).attr('rel');
-//  var albumToPutOnPage = "";
-//  albums.forEach(function(element){
-//    albumToPutOnPage += "<ul>" + "<li><a href><img src= '" + element.photoUrl +
-//      "' /></a>" + "<h3>" + element.photoName + "</h3></li></ul>";
-//  })
-//  console.log(selectedPage);
-//  console.log(albumToPutOnPage);
-// });
-
-// not working yet
-
-// $(document).click(function(){
-//   albums.forEach(function(element, idx) {
-//   $('.photoBox').attr('src', element.asheville);
-// });
-// });
-
-
-// or maybe
-
-// $(element.albumCover).click(function()
-// {
-//   $('.photoBox').attr('src', element.album);
-// });
-
-// ...for this one, change all names to album
-
-
-// (function(){
-//   var ashevilleAlbum= "";
 //
-// })
-
-// $(document).ready(function(){
-//   var ashevilleAlbum = "";
-//     $("element.albumCover").click(function(){
-//       albums.forEach(function(element, idx) {
-//         photoAlbums += "<ul>" + "<li><a href><img src= '" + element.photoUrl +
-//           "' /></a>" + "<h3>" + element.photoName + "</h3></li></ul>";
-//       });
-//     $('.photoBox').append(ashevilleAlbum);
-//     });
-// });
-
-
-
-// $('.blog').on('click', 'article', function (event) {
-//  +    console.log($('article').html());
-//  +      $(this).text("WE DID IT!!!!!")
-//  +  });
-
-// $('photoAlbums').css('display','inline-block');
 //
 // $(document).ready(function() {
-//   var ashevilleAlbum = "";
-//   asheville.forEach(function(element, idx) {
-//     ashevilleAlbum += "<a href><img src= '" + element.photoUrl +
-//       "' /></a>" + "<h3>" + element.photoName + "</h3>";
+//   var photoAlbums = "";
+//   var albumTmpl = _.template($('#grabLater').html())
+//   albums.forEach(function(element, idx) {
+//     photoAlbums += albumTmpl(element);
 //   });
-// $('.photoBox').append(ashevilleAlbum);
+// $('.container').append(photoAlbums);
 // });
-
-
 //
-// +$(document).ready(function () {
-//  +  var posts = "";
-//  +
-//  +  blogPosts.forEach(function (element, idx) {
-//  +    posts += "<article data-author='"
-//  +      + element.author
-//  +      + "'>"
-//  +      + "<h3>"
-//  +      + element.title
-//  +      + "</h3>"
-//  +      + "<p>"
-//  +      + element.content
-//  +      + "</p>"
-//  +      + "</article>";
-//  +
-//  +  });
-//  +
-//  +
-//  +  $('.blog').on('click', 'article', function (event) {
-//  +    console.log($('article').html());
-//  +      $(this).text("WE DID IT!!!!!")
-//  +  });
-//  +
-//  +
-//  +  // $('article').on('click', function (event) {
-//  +  //   console.log($('article').html());
-//  +  //     $(this).text("WE DID IT!!!!!")
-//  +  // });
-//  +  $('.blog').append(posts);
+
+
+// redo with templates
+
+
+
+
+// <script type="text/template" id="postTmpl">
+//  +      <ul>
+//  +        <li><h3> Title: <%= title %></h3></li>
+//  +        <li><p><%= body %></p></li>
+//  +        <li><h6> <%= author %></h6></li>
+//  +      </ul>
+//  +    </script>
